@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Seatwork 2</title>
+  <style type="text/css">
+    body {
+        background-color: #fbfbec;
+        font-family: 'Century Gothic';
+    }
+
+    .container1 {
+      margin: 50px;
+      margin-top: 40px;
+    }
+
+    .image-container {
+      width: 100%;  
+      max-width: 500px;  
+      height: auto;  
+      display: block;  
+      margin-left: auto;  
+      margin-right: auto;
+    }
+
+    .container1 p {
+      font-size: 24px; 
+      font-weight: bold;
+    }
+
+    .whitebg {
+      background-color: white;
+      padding: 50px 30px;  
+      margin: 25px;
+      width: 100%;  
+      box-sizing: border-box;
+      border: 3px dotted #000; 
+    }
+
+    label, input {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 16px; 
+    }
+
+    details summary {
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container1">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="https://ph.pinterest.com/pin/987273549561185938/" target="_blank">
+          <img src="https://i.pinimg.com/736x/10/85/35/108535967bbdef66923c2f60b8ae8c37.jpg" alt="Image" class="image-container">
+        </a>
+      </div>
+
+      <div class="col-md-5">
+        <div class="whitebg">
+          <h3>Hi! Let's practice basic math skills!</h3>
+          <h4>Given:</h4>
+
+          <form>
+            <label><h5>Enter 1st Number:</h5></label>
+            <input type="text" id="num1" class="form-control">
+            <label><h5>Enter 2nd Number:</h5></label>
+            <input type="text" id="num2" class="form-control">
+
+            <details ontoggle="message()">
+              <summary>Click here</summary>
+              <i id="Show"></i>
+            </details>
+          </form>
+        </div>
+    </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <button type="button" class="btn btn-info w-100" onclick="plus()"> Get the SUM of a and b </button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning w-100" onclick="difference()"> Get the DIFFERENCE of a and b </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-danger w-100" onclick="product()"> Get the PRODUCT of a and b </button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success w-100" onclick="quotient()"> Get the QUOTIENT of a and b </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function plus() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      var sum = Number(num1) + Number(num2);
+      alert("The sum is: " + sum); 
+    }
+
+    function difference() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      var difference = Number(num1) - Number(num2);
+      alert("The difference is: " + difference); 
+    }
+
+    function product() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      var product = Number(num1) * Number(num2);
+      alert("The product is: " + product); 
+    }
+
+    function quotient() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      if (num2 == 0) {
+        alert("Cannot divide by zero!");
+      } else {
+        var quotient = Number(num1) / Number(num2);
+        alert("The quotient is: " + quotient);
+      }
+    }
+
+    function message() {
+      document.getElementById("Show").innerHTML = "Input two numbers below and choose an operation to perform on them."; 
+    }
+  </script>
+
+</body>
+</html>
